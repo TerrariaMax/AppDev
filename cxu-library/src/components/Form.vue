@@ -1,15 +1,15 @@
 <template>
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-8 offset-md-2">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5 offset-md-2 offset-lg-3">
         <h1 class="text-center">User Information Form</h1>
         <form @submit.prevent="submitForm">
           <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-12 col-6">
               <label for="username" class="form-label">Username</label>
               <input type="text" class="form-control" id="username" v-model="formData.username" />
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-6">
               <label for="password" class="form-label">Password</label>
               <input
                 type="password"
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-12 col-6">
               <div class="form-check">
                 <input
                   type="checkbox"
@@ -31,7 +31,7 @@
                 <label class="form-check-label" for="isAustralian">Australian Resident?</label>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-6">
               <label for="gender" class="form-label">Gender</label>
               <select class="form-select" id="gender" v-model="formData.gender">
                 <option value="male">Male</option>
@@ -46,7 +46,7 @@
               class="form-control"
               id="reason"
               rows="3"
-              V-model="formData.reason "
+              v-model="formData.reason"
             ></textarea>
           </div>
           <div class="text-center">
@@ -97,6 +97,17 @@ const submitForm = () => {
   submittedCards.value.push({
     ...formData.value
   })
+  clearForm()
+}
+
+const clearForm = () => {
+  formData.value = {
+    username: '',
+    password: '',
+    isAustralian: false,
+    reason: '',
+    gender: ''
+  }
 }
 </script>
 
