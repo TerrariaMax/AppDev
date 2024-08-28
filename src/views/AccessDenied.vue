@@ -1,0 +1,13 @@
+<template>
+    <div class="text-center">
+        <h1>Access Denied</h1>
+        <p>You do not have permission to view this page.</p>
+    </div>
+</template>
+
+<script setup>
+// No script needed for now
+</script>
+
+<style>
+</style>
